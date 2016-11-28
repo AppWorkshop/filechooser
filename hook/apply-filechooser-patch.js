@@ -3,8 +3,6 @@
 // adds an import my.package.name.R to each of the java files.
 
 module.exports = function(context) {
-  var JsDiff = require('jsdiff');
-  var patchFile = 'plugins/com.cesidiodibenedetto.filechooser/patch/android-platform-filechooser.patch';
   var androidManifest = 'platforms/android/AndroidManifest.xml';
   var sourceFilesToPatch = [
       "src/com/cesidiodibenedetto/filechooser/FileChooser.java",
