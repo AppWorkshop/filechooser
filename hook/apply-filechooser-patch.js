@@ -28,8 +28,8 @@ module.exports = function (context) {
   var projectName = config.name();
   var packageName = config.android_packageName() || config.packageName();
 
-  var packageDeclarationPattern = /^[\s]*package[^;]+;[^\n]*\n/;
-  var newPackageImport = `\n import ${packageName}.R;\n`;
+  var packageDeclarationPattern = /\n([ ]*)package([^;]+);([^\n]*)\n/;
+  var newPackageImportReplacementString = `\n$1package$2;$3\n import ${packageName}.R;\n`;
 
   // loop through all of the .java files
   for (filename in sourceFilesToPatch) {
@@ -39,7 +39,7 @@ module.exports = function (context) {
       var javaSourceFileData = fs.readFileSync(javaSourceFilePath, {'encoding': 'utf8'});
 
       if (packageDeclarationPattern.test(javaSourceFileData)) {
-        var newdata = javaSourceFileData.replace(packageDeclarationPattern, newPackageImport);
+        var newdata = javaSourceFileData.replace(packageDeclarationPattern, newPackageImportReplacementString);
 
         fs.writeFileSync(javaSourceFilePath, newdata);
 
