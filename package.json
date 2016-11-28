@@ -1,0 +1,39 @@
+{
+  "name": "FileChooser",
+  "version": "1.0.0",
+  "description": "File Chooser for Cordova to overcome Android 4.4 issues outlined here: https://issues.apache.org/jira/browse/CB-5294 and https://code.google.com/p/android/issues/detail?id=62220",
+  "cordova": {
+    "id": "com.cesidiodibenedetto.filechooser",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AppWorkshop/filechooser.git"
+  },
+  "keywords": [
+    "cordova",
+    "file chooser",
+    "kitkat",
+    "file input",
+    "html",
+    "type file",
+    "android",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4"
+    }
+  ],
+  "dependencies": {
+  },
+  "author": "Cesidio DiBenedetto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AppWorkshop/filechooser/issues"
+  },
+  "homepage": "https://github.com/AppWorkshop/filechooser"
+}
