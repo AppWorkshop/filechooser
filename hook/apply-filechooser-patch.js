@@ -37,7 +37,7 @@ module.exports = function(context) {
     if (sourceFilesToPatch.hasOwnProperty(filename)) {
       var javaSourceFilePath = path.join(context.opts.projectRoot, sourceFilesToPatch[filename]);
 
-      var javaSourceFileData = fs.readFileSync(indexHTMLPath, {'encoding': 'utf8'});
+      var javaSourceFileData = fs.readFileSync(javaSourceFilePath, {'encoding': 'utf8'});
 
       if (packageDeclarationPattern.test(javaSourceFileData)) {
         var newdata = javaSourceFileData.replace(packageDeclarationPattern, newPackageImport);
