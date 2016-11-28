@@ -28,7 +28,7 @@ module.exports = function (context) {
   var projectName = config.name();
   var packageName = config.android_packageName() || config.packageName();
 
-  var packageDeclarationPattern = new RegExp('^package[^\n]+\n$');
+  var packageDeclarationPattern = /^[\s]*package[^;]+;[^\n]*\n/;
   var newPackageImport = `\n import ${packageName}.R;\n`;
 
   // loop through all of the .java files
